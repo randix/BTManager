@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class Scanner {
+    
+    var advertisements: [AdvertisementRaw] = []
+    
+    
+}
