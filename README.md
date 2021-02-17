@@ -1,2 +1,3 @@
 # BTManager
- Bluetooth Manager for iOS
+
+A description of this package.
