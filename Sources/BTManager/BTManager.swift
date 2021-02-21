@@ -10,12 +10,13 @@ import CoreBluetooth
 
 
 class BTManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
     }
 
     
-    var text = "Hello, World!"
+    var text = "Hello, World!!"
     
     // API
     func startScan() {
