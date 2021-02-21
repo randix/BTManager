@@ -8,7 +8,13 @@
 import Foundation
 import CoreBluetooth
 
-class BTManager {
+
+class BTManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+    }
+
+    
     var text = "Hello, World!"
     
     // API
