@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import CoreBluetooth
 
-class Scanner {
+class Scanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+    }
+    
     
     var advertisements: [AdvertisementRaw] = []
     
