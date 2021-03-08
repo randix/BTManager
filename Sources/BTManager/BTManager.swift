@@ -11,12 +11,36 @@ import CoreBluetooth
 
 class BTManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
+    var log: Logger?
+    
+    var btPoweredOn = false
+    
+    static let shared = BTManager()
+    private override init() {
+        super.init()
+    }
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        
+        switch central.state {
+        case .poweredOn:
+            log?.debug("BT is powered on")
+            btPoweredOn = true
+            startScan()
+        case .poweredOff:
+            log?.info("BT is powered off")
+        default:
+            log?.debug("BT centralManager state: \(central.state)")
+            break
+        }
     }
 
     
     var text = "Hello, World!!"
+    
+    // API
+    func logger(_ logger: Logger) {
+        log = logger
+    }
     
     // API
     func startScan() {
