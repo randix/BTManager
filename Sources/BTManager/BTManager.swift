@@ -11,8 +11,12 @@ import CoreBluetooth
 
 class BTManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
+    var text = "Hello, World!!"
+    
+
     var log: Logger?
     
+    /// API: flag for whether the iOS Bluetooth is powered on
     var btPoweredOn = false
     
     static let shared = BTManager()
@@ -34,9 +38,6 @@ class BTManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
 
-    
-    var text = "Hello, World!!"
-    
     // API
     func logger(_ logger: Logger) {
         log = logger
